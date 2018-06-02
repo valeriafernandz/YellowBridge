@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="material-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>YellowBridge</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="XHR.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/icons8.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/icons8.png" type="image/x-icon"/>
+</head>
+
+<body onload="buttons()">
+    <header>
+        <nav>
+            <div class="nav-wrapper grey lighten-4">
+                <div class="row">
+                    <div class="col l2">
+                        <a href="#" class="brand-logo left  grey-text lighten-4">
+                            <img src="images/icons8.png"></img> YellowBridge</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </div>
+                    <div class="col l4 hide-on-med-and-down">
+                        <form style="margin-left:0%; width: 500px; height: 30px;">
+                            <div class="input-field">
+                                <input  placeholder="Search" id="search" type="search" required style="background-color: #f5f5f5">
+                                
+                                <label class="label-icon" for="search">
+                                    <i class="material-icons amber-text accent-3">search</i>
+                                </label>
+                                
+                                <!-- <i class="material-icons amber-text">close</i> -->
+                            </div>
+                            
+                           
+                        </form>
+                       
+                    </div>
+                    <div class="col s6 hide-on-med-and-down">
+                        <ul class="right" id="navbarButtons">
+                        	<li>
+                        		<button type="button" onclick="busqueda()" class="btn-flat waves-effect waves-light amber-text">Search</button>
+                        	</li>
+                            <li> 
+                                <a href="login.html" id="login" class="btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Login">
+                                    <i class="material-icons amber-text accent-3">face</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="registro.html" id="register" class="btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Sign Up">
+                                    <i class="material-icons amber-text accent-3">add</i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <ul class="side-nav" id="mobile-demo">
+                    <li>
+                        <a href="">
+                            <i class="material-icons">home</i>inicio</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="material-icons">face</i>Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    </header>
+    <br>
+    <div class="container">
+    
+      <!-- <form>
+        <div class="input-field">
+          <input  id="search" type="search" required>
+          <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+          <button type="button" onclick="busqueda()" class="btn-flat waves-effect waves-light">Buscar!<i class="material-icons">search</i></button>
+        </div>
+      </form> -->
+        <div class="row">
+            <div class="carousel carousel-slider center" data-indicators="true">
+
+                <div class="carousel-item amber white-text" href="#one!">
+                    <h2 id="videoname1">First video</h2>
+                    <h5 id="username1" class="white-text"> </h5>
+                    <hr>
+                    <p id="video_des1" class="white-text">This is your first video</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a id="play1" href="" class="btn-flat  waves-effect waves-light white-text darken-text-2">
+                        <i class="material-icons large">play_arrow</i>
+                    </a>
+                </div>
+                <div class="carousel-item red white-text" href="#two!">
+                    <h2 id="videoname2">Second video</h2>
+                    <h5 id="username2" class="white-text"> </h5>
+                    <hr>
+                    <p id="video_des2" class="white-text">This is your second video</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a id="play2" href="" class="btn-flat  waves-effect waves-light white-text darken-text-2">
+                        <i class="material-icons large">play_arrow</i>
+                    </a>
+                </div>
+                <div class="carousel-item green white-text" href="#three!">
+                    <h2 id="videoname3">Third video</h2>
+                    <h5 id="username3" class="white-text"> </h5>
+                    <hr>
+                    <p id="video_des3" class="white-text">This is your third video</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a id="play3" href="" class="btn-flat  waves-effect waves-light white-text darken-text-2">
+                        <i class="material-icons large">play_arrow</i>
+                    </a>
+                </div>
+                <div class="carousel-item blue white-text" href="#four!">
+                    <h2 id="videoname4">Fourth video</h2>
+                    <h5 id="username4" class="white-text"> </h5>
+                    <hr>
+                    <p id="video_des4" class="white-text">This is your fourth video</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a id="play4" href="" class="btn-flat  waves-effect waves-light white-text darken-text-2">
+                        <i class="material-icons large">play_arrow</i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col l12">
+                    <ul id="videoList"></ul>
+                </div>
+            </div>
+        </div>
+	</div>
+        <script>
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true
+            });
+        </script>
+        <script>
+            var homeArray = [];
+            var List = document.getElementById("videoList");
+            var xhr= new XHR();
+            xhr.list("/YellowBridge/Home");
+            var homeArray=r;
+            for (const i in homeArray) {
+                var li = document.createElement("li");
+                var video =
+                    `<div class="card-panel" style="border-left:thick solid #ffc107 ">
+                                <h3>
+                                    ${homeArray[i].videoname}
+                                </h3>
+                            <hr class="amber">
+                            <h5> ${homeArray[i].username}</h5>
+                            <p>
+                               ${homeArray[i].video_des} 
+                            </p>
+                            <a href="VideoStreaming.html?media_id=${homeArray[i].video_id}">Reproducir</a>
+                        </div>`;
+                li.innerHTML = video;
+                List.appendChild(li);
+            }
+            console.log(homeArray);
+            for (var i = 1; i <=4 ; i++) {
+            	//console.log(homeArray[i].videoname);
+                console.log(document.getElementById("videoname" + i));
+                document.getElementById("username"+i).innerHTML=homeArray[i-1].username;
+                document.getElementById("play"+i).href="VideoStreaming.html?media_id="+homeArray[i-1].video_id;
+                document.getElementById("videoname" + i).innerHTML = homeArray[i - 1].videoname;
+                document.getElementById("video_des" + i).innerHTML = homeArray[i - 1].video_des;
+            }
+            console.log(homeArray);
+            
+             function busqueda() {
+                while( List.firstChild ){
+                List.removeChild( List.firstChild );}
+                xhr.list("/YellowBridge/Search?search="+document.getElementById("search").value.trim());
+             homeArray=r;
+            for (const i in homeArray) {
+                var li = document.createElement("li");
+                var video =
+                    `<div class="card-panel" style="border-left:thick solid #ffc107 ">
+                                <h3>
+                                
+                                    ${homeArray[i].videoname}
+                                </h3>
+                            <hr class="amber">
+                            <h5> ${homeArray[i].username}</h5>
+                            <p>
+                               ${homeArray[i].video_des} 
+                            </p>
+                            <a href="VideoStreaming.html?media_id=${homeArray[i].video_id}">Reproducir</a>
+                        </div>`;
+                li.innerHTML = video;
+                List.appendChild(li);
+            }
+            console.log(homeArray);
+            /* for (var i = 1; i <=4 ; i++) {
+            	//console.log(homeArray[i].videoname);
+                console.log(document.getElementById("videoname" + i));
+                document.getElementById("username"+i).innerHTML=homeArray[i-1].username;
+                document.getElementById("play"+i).href="VideoStreaming.html?media_id="+homeArray[i-1].video_id;
+                document.getElementById("videoname" + i).innerHTML = homeArray[i - 1].videoname;
+                document.getElementById("video_des" + i).innerHTML = homeArray[i - 1].video_des;
+            } */
+            var inHTML=List.innerHTML.trim();
+            console.log(inHTML);
+            if(inHTML===""){
+                List.innerHTML="<h1>No se han encontrado videos con los criterios de busqueda especificados</h1>";
+            }
+
+            }
+        </script>
+
+
+</body>
+
+</html>
