@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Channel</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="images/icons8.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icons8.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <header>
+        <nav>
+          <div class="nav-wrapper grey lighten-4">
+            <a href="#" class="brand-logo left  grey-text lighten-4"><img src="images/icons8.png"></img>   YellowBridge</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="home.html" class="btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Home"><i class="material-icons right amber-text accent-3">home</i></a></li>
+              <li><a href="login.html" class="btn-flat tooltipped" data-position="bottom" data-delay="50" data-tooltip="Log Out"><i class="material-icons left amber-text accent-3">keyboard_tab</i></a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href=""><i class="material-icons">home</i>inicio</a></li>
+              <li><a href=""><i class="material-icons">face</i>Register</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header> 
+  </head>
+  <body onload="buttons()">
+    <br><br><br>
+    <div class="fixed-action-btn">
+      <a href="channel.html"class="center waves-effect grey lighten-2 waves-yellow btn black-text" style="border-radius:15px">Ir al Canal</a></button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col l4">
+            <h2 class="grey-text darken-3" style="font-family: Tahoma, Geneva, sans-serif">Sube un video!</h2>
+          </div>
+        <div class="col l8">
+          <form action="">
+            <div class="input-field">
+              <input type="text" id="titulovid">
+              <label for="titulovid">Titulo del Video</label>
+                </div>
+                <br>
+                <div class="input-field">
+              <input type="text" id="deArchivo" cols="30" rows="10" ></input>
+              <label for="deArchivo">Descripcion del video </label>
+            </div>
+                <div class="file-field input-field">
+                <button class="center waves-effect grey lighten-2 waves-yellow btn black-text" style="border-radius:15px">
+                  <span>Choose File</span>
+                  <input type="file" id="file">
+                </button>
+               <div class="file-path-wrapper">
+                  <input type="text" id="file" class="file-path validate">
+                </div>
+              </div>
+            </form>
+            </div>
+            <div class="right">
+              <button class="center waves-effect grey lighten-2 waves-yellow btn black-text" style="border-radius:15px" onclick="upload()">Subir video</button>
+              <h3 id="uploadStatus"></h3>
+              <!-- <div class="progress" id="loading" style="visibility:hidden">
+                 <div class="indeterminate"></div>
+             </div> -->
+
+              <div class="preloader-wrapper small active" style="visibility:hidden" id="loading">
+                  <div class="spinner-layer spinner-yellow-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div><div class="gap-patch">
+                      <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+      </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js" ></script>
+    <script src="XHR.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+      });
+
+      function $(id) {
+      	return document.getElementById(id);
+      }
+
+      function upload() {
+    	var xhr= new XHR();
+      	xhr.up();
+        $("loading").style="visibility:visible";
+
+      }
+      function cerrar(){
+    	var  xhr= new XHR();
+      	xhr.get("/YellowBridge/LogoutServlet");
+      }
+    </script>
+  </body>
+</html>
